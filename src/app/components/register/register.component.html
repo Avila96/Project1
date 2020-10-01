@@ -1,0 +1,52 @@
+<h2>Register</h2>
+<div class="login"> 
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="full_name">First Name</label>
+        <input type="text" formControlName="full_name" class="form-control" name="Uname" id="Uname" placeholder="Name"
+        [ngClass]="{ 'is-invalid': submitted && f.full_name.errors }" />
+        <div *ngIf="submitted && f.full_name.errors" class="invalid-feedback">
+            <div *ngIf="f.full_name.errors.required">First Name is required</div>
+        </div>
+    </div><br><br>
+    <div class="form-group">
+        <label for="mobile_number">Mobile Number</label>
+        <input type="text" formControlName="mobile_number" class="form-control" name="Mnum" id="Mnum" placeholder="eg: 6787456789"
+        [ngClass]="{ 'is-invalid': submitted && f.mobile_number.errors }" />
+        <div *ngIf="submitted && f.mobile_number.errors" class="invalid-feedback">
+            <div *ngIf="f.mobile_number.errors.required">Mobile Number is required</div>
+        </div>
+    </div><br><br>
+    <div class="form-group">
+        <label for="role">Role</label><br>
+        <input type="text" formControlName="role" class="form-control" name="Role" id="Role" placeholder="Super-Admin"
+        [ngClass]="{ 'is-invalid': submitted && f.role.errors }" />
+        <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
+            <div *ngIf="f.role.errors.required">Role is required</div>
+        </div>
+    </div><br><br>
+    <div class="form-group">
+        <label for="profile_image">Profile Image</label>
+        <input type="profile_image" formControlName="profile_image" class="form-control" name="Image" id="Image" 
+         [ngClass]="{ 'is-invalid': submitted && f.profile_image.errors }" />
+        <div *ngIf="submitted && f.profile_image.errors" class="invalid-feedback">
+            <div *ngIf="f.profile_image.errors.required">Profile Image is required</div>
+            <div *ngIf="f.profile_image.errors.minlength">Profile Image must be at least 6 characters</div>
+        </div>
+    </div><br><br>
+    <div class="form-group">
+        <label for="password">Password</label><br>
+        <input type="password" formControlName="password" class="form-control" name="Pass" id="Pass" placeholder="Password"
+        [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+    </div><br>
+    <div class="form-group">
+        <button  [disabled]="loading" class="btn btn-primary">Register</button>
+        <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
+    </div>
+</form>
+</div>
+
