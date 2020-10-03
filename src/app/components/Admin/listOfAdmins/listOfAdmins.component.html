@@ -1,0 +1,27 @@
+<h1 align="center" >List of Admin</h1>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">USER ID</th>
+        <th scope="col">Mobile Number</th>
+        <th scope="col">Created At</th>
+
+        
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of arrayofusers ">
+            <td>
+           {{user.full_name}}
+            </td>
+            <td>{{user.mobile_number}}
+            </td>
+            <td>{{user.role}}
+            </td>
+          </tr>
+     
+      </tbody>
+    </table>
+    
+   </div>

@@ -11,20 +11,20 @@ li{
   }
   a{
     text-decoration: none;
-    color: black;
+    color: rgb(58, 46, 224);
      padding: 2vw;
-    font-family: monospace;
+    /* font-family: monospace; */
+    font-size: 25px;
   }
   nav{
   /* margin-top: -10%; */
-  margin-left: 70%;
-  width: 100%;
-  background-color: rgb(241, 217, 217);
+  margin-right: 70%;
+  width: 30%;
+ 
   }
   ul{
     margin: 0;
-    padding: 0;
-      
+    padding: 5px;
   /*this option by default dispose the elements in a row (flex-direction: row)*/
   display: flex;
   }
