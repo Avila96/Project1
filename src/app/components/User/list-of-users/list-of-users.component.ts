@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 //Importing User model and User dataservice.
-import { User} from '../../models/user';
-import { UserService } from '../../services/user.service';
+import { User} from '../../../models/user';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-list-of-users',

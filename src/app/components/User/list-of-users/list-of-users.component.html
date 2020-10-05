@@ -13,13 +13,14 @@
         <td>
           {{user.full_name}}
         </td>
-        <td>{{user.mobile_number}}
+        <td>
+          <a [routerLink]="['/users', user._id]" style="color:blue"><u>{{user.mobile_number}}</u></a> 
         </td>
         <td>{{user.timestamp.registered_at}}
         </td>
       </tr>
-     
       </tbody>
     </table>
-    
    </div>
+
+  <button [routerLink]="['/home']">Go Back</button>

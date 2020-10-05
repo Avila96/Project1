@@ -11,8 +11,8 @@ const httpOptions = {
 
 @Injectable()
 export class UserService {
-  private baseUrl =  'https://api.bkconnect.knowhere-studio.dev/admin';  // URL to web api
-
+  private baseUrl =  'https://api.bkconnect.knowhere-studio.dev/admin';  // URL to web api/user/:user_id/profile
+  private userUrl =  'https://api.bkconnect.knowhere-studio.dev/user';
      constructor(private http: HttpClient) { }
 
  
@@ -22,23 +22,34 @@ export class UserService {
      // get multiple user(Rn)----------------------------------------------------------------------------------------
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.baseUrl+ '/users', {
-      headers: new HttpHeaders({'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjcyYzVlM2E3YjVjNjUxNDIzMjA3YzEiLCJpYXQiOjE2MDE1MjcwNjgsImV4cCI6MTYwMTc4NjI2OH0.tg7hAfKiGIIb3VWCoNt_6-xm6hF-m10f_HCZWJqAfXM'})
+      headers: new HttpHeaders({'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjcyYzVlM2E3YjVjNjUxNDIzMjA3YzEiLCJpYXQiOjE2MDE4NzczNzMsImV4cCI6MTYwMjEzNjU3M30.-1_02tRegW8DMFtz389JaM1V2pb8b-ee5lb-tjSXLUY'})
     })    
    }
 
    getAdmin (): Observable<User[]> {
     return this.http.get<User[]>(this.baseUrl, {
-      headers: new HttpHeaders({'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjcyYzVlM2E3YjVjNjUxNDIzMjA3YzEiLCJpYXQiOjE2MDE1MjcwNjgsImV4cCI6MTYwMTc4NjI2OH0.tg7hAfKiGIIb3VWCoNt_6-xm6hF-m10f_HCZWJqAfXM'})
+      headers: new HttpHeaders({'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjcyYzVlM2E3YjVjNjUxNDIzMjA3YzEiLCJpYXQiOjE2MDE4NzczNzMsImV4cCI6MTYwMjEzNjU3M30.-1_02tRegW8DMFtz389JaM1V2pb8b-ee5lb-tjSXLUY'})
     })    
    }
   
-  //get user by id
-   getUserById(id: string) : Observable<User>{
-     const url=`${this.baseUrl}/${id}`;
-    return this.http.get<User>(url, {
-      headers: new HttpHeaders({'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjcyYzVlM2E3YjVjNjUxNDIzMjA3YzEiLCJpYXQiOjE2MDE1MjcwNjgsImV4cCI6MTYwMTc4NjI2OH0.tg7hAfKiGIIb3VWCoNt_6-xm6hF-m10f_HCZWJqAfXM'})
+  //get admin by id
+   getAdminById(id: string) : Observable<User>{
+    const url=`${this.baseUrl}/${id}`
+   return this.http.get<User>(url+'/profile', 
+   {
+      headers: new HttpHeaders({'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjcyYzVlM2E3YjVjNjUxNDIzMjA3YzEiLCJpYXQiOjE2MDE4NzczNzMsImV4cCI6MTYwMjEzNjU3M30.-1_02tRegW8DMFtz389JaM1V2pb8b-ee5lb-tjSXLUY'})
     });
    }
  
+   //get user by id
+   getUserById(id: string) : Observable<User>{
+    const url=`${this.userUrl}/${id}`;
+    return this.http.get<User>(url+'/profile', 
+   {
+      headers: new HttpHeaders({'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjY4NTVhOGNkYjU3ZTE1MGRjYzFjOTMiLCJpYXQiOjE2MDE5MDU1MjcsImV4cCI6MTYwMjE2NDcyN30.A8wtKC9zrjtgk-YDH4Xi-pXnJLIJoNFG0JZ6shGf1VU',
+                                  
+    })
+    });
+   }
 
 }

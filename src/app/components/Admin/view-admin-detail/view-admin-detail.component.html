@@ -1,9 +1,9 @@
 
-<p>The Detail of the selected Admin</p>
-<h3>{{user.full_name}}</h3>
-<h3>{{user.mobile_number}}</h3>
-<h3>{{user.role}}</h3>
-   
-          
-       
-    
+<h1>The Detail of the selected Admin</h1>
+<h3>Name :          <b>{{user.full_name}}</b></h3>
+<h3>Mobile Number:  {{user.mobile_number}}</h3>
+<h3>Role:           {{user.role}}</h3>
+<h3>Profile Picture:{{user.profile_image}}</h3>
+
+<!-- <p align="center" ><a [routerLink]="['/admins']">Go Back</a></p> -->
+<button [routerLink]="['/admins']">Go Back</button>

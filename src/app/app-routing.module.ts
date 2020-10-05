@@ -5,9 +5,11 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './guard/auth.guard';
 import { ImageUploadComponent } from './components/image-upload/image-upload.component'
-import { UsersComponent } from './components/list-of-users/list-of-users.component';
+import { UsersComponent } from './components/User/list-of-users/list-of-users.component';
 import { AdminComponent } from './components/Admin/listOfAdmins/listOfAdmins.component';
 import { ViewAdminDetailComponent } from './components/Admin/view-admin-detail/view-admin-detail.component';
+import { ViewUserDetailComponent } from './components/User/view-user-detail/view-user-detail.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -24,11 +26,15 @@ const routes: Routes = [
     component: UsersComponent
   },
   {
+    path: 'users/:id',
+    component: ViewUserDetailComponent
+  },
+  {
     path: 'admins',
     component: AdminComponent
   },
   {
-    path: 'view_admin_detail/:id',
+    path: 'admins/:id',
     component: ViewAdminDetailComponent
   },
   {

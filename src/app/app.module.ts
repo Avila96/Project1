@@ -19,9 +19,12 @@ import { LoginService } from './services/login.service';
 import { ErrorInterceptor } from './helpers/error.interceptor';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ImageUploadComponent } from './components/image-upload/image-upload.component';
-import { UsersComponent } from './components/list-of-users/list-of-users.component';
+import { UsersComponent } from './components/User/list-of-users/list-of-users.component';
 import { AdminComponent } from './components/Admin/listOfAdmins/listOfAdmins.component';
 import { ViewAdminDetailComponent } from './components/Admin/view-admin-detail/view-admin-detail.component';
+import { ViewUserDetailComponent } from './components/User/view-user-detail/view-user-detail.component';
+//import { ViewUserDetailComponent } from './components/User/list-of-users/view-user-detail/view-user-detail.component';
+
 
 
 
@@ -39,7 +42,10 @@ import { ViewAdminDetailComponent } from './components/Admin/view-admin-detail/v
     ImageUploadComponent,
     UsersComponent,
     AdminComponent,
-    ViewAdminDetailComponent
+    ViewAdminDetailComponent,
+    ViewUserDetailComponent,
+   
+  
   ],
   imports: [
     BrowserModule,

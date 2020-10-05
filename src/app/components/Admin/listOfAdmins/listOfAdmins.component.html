@@ -13,15 +13,16 @@
     <tbody>
         <tr *ngFor="let user of arrayofusers ">
             <td>
-           {{user.full_name}}
+              <a [routerLink]="['/admins', user._id]" style="color:blue"><u>{{user.full_name}}</u></a>
+           
             </td>
             <td>{{user.mobile_number}}
             </td>
             <td>{{user.role}}
             </td>
           </tr>
-     
       </tbody>
     </table>
     
    </div>
+   <button [routerLink]="['/home']">Go Back</button>
