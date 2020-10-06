@@ -6,7 +6,33 @@ h3{
 h1{
     text-align: center; 
     color: royalblue;
+    padding-top: 9%;
 }
 button{
-    margin-left: 60%;
+    margin-top: 1%;
+    margin-left: 70%;
 }
+
+
+.myTable { 
+    margin-left: 25%;
+    width: 50%;
+    text-align: left;
+    background-color: rgb(226, 250, 199);
+    border-collapse: collapse; 
+    
+    }
+  .myTable th { 
+    background-color: rgb(253, 23, 61);
+    color: white; 
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    }
+  .myTable td, 
+  .myTable th { 
+    padding: 20px;
+    border: 1px solid rgb(83, 74, 199); 
+    text-align: center;
+    }
+    tr:hover {background-color: rgb(102, 194, 189);}

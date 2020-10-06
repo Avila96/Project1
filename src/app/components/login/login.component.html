@@ -1,31 +1,4 @@
-<!-- <h2>Login</h2>
-<div class="login">  
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="mobile_number">Mobile Number: </label>
-        <input type="text" formControlName="mobile_number" class="form-control" name="Uname" id="Uname" placeholder="eg: 7867564534"
-        [ngClass]="{ 'is-invalid': submitted && f.mobile_number.errors }" />
-        <div *ngIf="submitted && f.mobile_number.errors" class="invalid-feedback">
-            <div *ngIf="f.mobile_number.errors.required">Mobile Number is required</div>
-        </div>
-    </div> <br><br>  
-    <div class="form-group">
-        <label for="password">Password: </label>
-        <input type="password" formControlName="password" class="form-control" name="Pass" id="Pass" placeholder="Password"
-        [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Password is required</div>
-        </div>
-    </div> <br><br>  
-    <div class="form-group">
-        <button [disabled]="loading" class="btn btn-primary">Login</button>
-        <a [routerLink]="['/register']" class="btn btn-link">Register</a>
-    </div>
-</form>
-</div> -->
-
-
-<body  scroll="no">
+<!-- <body  scroll="no">
 
     <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading" style="margin-bottom: 10px">
       <div class="login-wrap">
@@ -35,7 +8,7 @@
           </div>
           <div class="login">
             <div class="row">
-              <input type="text" trim class="form-field" placeholder="7778978998 Id" id="mobile_number" name="mobile_number"
+              <input type="text" trim class="form-field" placeholder="7778978998" id="mobile_number" name="mobile_number"
                 ngModel #mobile_numberInput="ngModel" required mobile_number>
               <div [hidden]="mobile_numberInput.valid || mobile_numberInput.pristine" class="help-block">
                 Please enter a valid mobile_number
@@ -43,7 +16,6 @@
             </div>
             <div class="row">
               <tr>
-  
                 <td> <input id="password"  type="{{type1}}" class="form-field"
                     name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required>
                   <div [hidden]="passwordInput.valid || passwordInput.pristine" class="help-block">
@@ -53,14 +25,38 @@
               
               </tr>
             </div>
-           
             <br>
             <br>
             <input type="submit" value="Login" *ngIf="!isLoading">
+            
           </div>
         </div>
       </div>
-    </form>
-  
-  
-  
+    </form> -->
+
+ <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading" style="margin-bottom: 10px">
+  <div style="background: url('../../../assets/bckgrnd.webp');">
+<div class="login">
+  <div class="login-header">
+    <h1>Login</h1>
+  </div>
+  <div class="login-form">
+    <h3>Mobile Number :</h3>
+    <input type="text" placeholder="9898978998"  ngModel #mobile_numberInput="ngModel" required mobile_number /><br>
+    <div [hidden]="mobile_numberInput.valid || mobile_numberInput.pristine" class="help-block">
+      Please enter a valid mobile_number
+    </div>
+    <h3>Password:</h3>
+    <input type="password"  type="{{type1}}" class="form-field" placeholder="Password"
+    ngModel matInput placeholder="Password" #passwordInput="ngModel" required/>
+    <br>
+    <input type="submit" class="login-button" value="Login"  *ngIf="!isLoading">
+    <!-- <input type="button" value="Login" class="login-button"/> -->
+    <br>
+    <a class="sign-up" [routerLink]="'/register'">Sign Up!</a>
+    <br>
+    <br>
+  </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>

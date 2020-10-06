@@ -25,11 +25,6 @@ import { ViewAdminDetailComponent } from './components/Admin/view-admin-detail/v
 import { ViewUserDetailComponent } from './components/User/view-user-detail/view-user-detail.component';
 //import { ViewUserDetailComponent } from './components/User/list-of-users/view-user-detail/view-user-detail.component';
 
-
-
-
-
-
 //import { fakeBackendProvider } from './helpers/fake-backend';
 
 @NgModule({

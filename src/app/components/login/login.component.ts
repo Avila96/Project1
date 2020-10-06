@@ -75,29 +75,4 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
 
-
-//    // convenience getter for easy access to form fields
-//    get f() { return this.loginForm.controls; }
-
-//    onSubmit() {
-//     this.submitted = true;
-
-//     // stop here if form is invalid
-//     if (this.loginForm.invalid) {
-//         return;
-//     }
-
-//     this.loading = true;
-//     this.loginauthService.login(this.f.mobile_number.value, this.f.password.value)
-       
-//         .subscribe(
-//             data => {
-//                 this.router.navigate(['/uploadimage']);
-//             },
-//             error => {
-//                 this.alertService.error(error);
-//                 this.loading = false;
-//             });
-// }
-
 }

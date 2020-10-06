@@ -27,7 +27,5 @@ export class ViewUserDetailComponent implements OnInit {
       //@ts-ignore
       this.user = result.result.data;
     })
-   
   }
-
 }

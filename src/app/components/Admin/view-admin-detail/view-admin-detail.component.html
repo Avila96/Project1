@@ -1,9 +1,26 @@
-
+<div style="background: url('../../../../assets/bckgrnd.webp');" >
 <h1>The Detail of the selected Admin</h1>
-<h3>Name :          <b>{{user.full_name}}</b></h3>
+<!-- <h3>Name :          <b>{{user.full_name}}</b></h3>
 <h3>Mobile Number:  {{user.mobile_number}}</h3>
 <h3>Role:           {{user.role}}</h3>
-<h3>Profile Picture:{{user.profile_image}}</h3>
+<h3>Profile Picture:{{user.profile_image}}</h3> -->
+
+<table class="myTable">
+	<tr>
+		<th>Name  </th>
+        <th>Mobile Number</th>
+        <th>Role</th>
+        <th>Profile Picture</th>
+	</tr>
+	<tr>
+		<td><b>{{user.full_name}}</b></td>
+		<td>{{user.mobile_number}}</td>
+		<td>{{user.role}}</td>
+		<td>{{user.profile_image}}</td>
+	</tr>
+</table>
 
 <!-- <p align="center" ><a [routerLink]="['/admins']">Go Back</a></p> -->
 <button [routerLink]="['/admins']">Go Back</button>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
