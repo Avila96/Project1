@@ -7,7 +7,7 @@ li{
     list-style-type: none;  
     font-size: 3vh;
     /*when I specify 2 values to margin, the first one is for the top and bottom side, the second for the left and right side*/
-    margin: 0 2vw;
+    /* margin: 0 2vw; */
   }
   a{
     text-decoration: none;

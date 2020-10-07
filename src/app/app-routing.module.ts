@@ -9,6 +9,8 @@ import { UsersComponent } from './components/User/list-of-users/list-of-users.co
 import { AdminComponent } from './components/Admin/listOfAdmins/listOfAdmins.component';
 import { ViewAdminDetailComponent } from './components/Admin/view-admin-detail/view-admin-detail.component';
 import { ViewUserDetailComponent } from './components/User/view-user-detail/view-user-detail.component';
+import { ListOfTopicsComponent } from './components/Topics/list-of-topics/list-of-topics.component';
+import { ListOfSongsComponent } from './components/songs/list-of-songs/list-of-songs.component';
 
 
 const routes: Routes = [
@@ -38,10 +40,17 @@ const routes: Routes = [
     component: ViewAdminDetailComponent
   },
   {
+    path: 'topics',
+    component: ListOfTopicsComponent
+  },
+  {
+    path: 'songs',
+    component: ListOfSongsComponent
+  },
+  {
     path: 'home',
     component: HomeComponent
   },
-
   {
     path: 'imageupload',
     component: ImageUploadComponent,

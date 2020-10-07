@@ -1,14 +1,21 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
-import { Subject,Observable } from "rxjs";
+import { BehaviorSubject,Subject,Observable } from "rxjs";
+import { map } from 'rxjs/operators';
 import { User } from '../models/user';
+
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
 
 @Injectable({ providedIn: "root" })
 export class LoginAuthService {
   private isAuthenticated = false;
   private token: string;
   private tokenTimer: any;
+  private currentUserSubject: BehaviorSubject<User>;
+    public currentUser: Observable<User>;
 //   private userId: string;
   //-----------global variable for storing customer user Id
   private full_name:string;
@@ -18,7 +25,15 @@ export class LoginAuthService {
   private UserAuthStatusListener = new Subject<boolean>();
 
   private url = 'https://api.bkconnect.knowhere-studio.dev/admin/login';
-  constructor(private http: HttpClient, private router: Router) {}
+
+
+  constructor(private http: HttpClient, private router: Router) {
+    this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+        this.currentUser = this.currentUserSubject.asObservable();
+  }
+  public get currentUserValue(): User {
+    return this.currentUserSubject.value;
+}
 
   getToken() {
     return     localStorage.getItem("token", );
@@ -37,39 +52,52 @@ export class LoginAuthService {
     return this.UserAuthStatusListener.asObservable();
   }
 
-  login(mobile_number: string, password: string){
-    const authData = { mobile_number: mobile_number, password: password };
-    this.http.post<{ mobile_number:string; full_name :string; role: string; profile_image: string, token: string; expiresIn: number; authData }>(
-        this.url,authData)
-      .subscribe(response => {
-        const token = response.token;
-        this.token = token;
-        if (token) {
-          console.log(token);
-          const expiresInDuration = response.expiresIn;
-          this.setAuthTimer(expiresInDuration);
-          this.isAuthenticated = true;
-          this.role=response.role;
-          this.full_name=response.full_name;
-          this.UserAuthStatusListener.next(true);
-          const now = new Date();
-          const expirationDate = new Date(
-            now.getTime() + expiresInDuration * 1000
-          );
-          console.log(expirationDate);
-          console.log(response.role);
-          console.log(response.full_name);
-          console.log(response.mobile_number);
-          this.saveAuthData(token, response.mobile_number, expirationDate, this.role, response.full_name, response.profile_image);
-        }
-      }, error => {
-        this.UserAuthStatusListener.next(false);
-        alert(
-          "Invalid Mobile Number or Password \n" +
-          "Enter Valid Mobile Number Id or Password "
-          );
-      });
-  }
+  // login(mobile_number: string, password: string){
+  //   const authData = { mobile_number: mobile_number, password: password };
+  //   this.http.post<{ mobile_number:string; full_name :string; role: string; profile_image: string, token: string; expiresIn: number; authData }>(
+  //       this.url,authData)
+  //     .subscribe(response => {
+  //       const token = response.token;
+  //       this.token = token;
+  //       if (token) {
+  //         console.log(token);
+  //         const expiresInDuration = response.expiresIn;
+  //         this.setAuthTimer(expiresInDuration);
+  //         this.isAuthenticated = true;
+  //         this.role=response.role;
+  //         this.full_name=response.full_name;
+  //         this.UserAuthStatusListener.next(true);
+  //         const now = new Date();
+  //         const expirationDate = new Date(
+  //           now.getTime() + expiresInDuration * 1000
+  //         );
+  //         console.log(expirationDate);
+  //         console.log(response.role);
+  //         console.log(response.full_name);
+  //         console.log(response.mobile_number);
+  //         this.saveAuthData(token, response.mobile_number, expirationDate, this.role, response.full_name, response.profile_image);
+  //       }
+  //     }, error => {
+  //       this.UserAuthStatusListener.next(false);
+  //       alert(
+  //         "Invalid Mobile Number or Password \n" +
+  //         "Enter Valid Mobile Number Id or Password "
+  //         );
+  //     });
+  // }
+
+  login(mobile_number: string, password: string) {
+    return this.http.post<any>(this.url, { mobile_number: mobile_number, password: password }, httpOptions)
+        .pipe(map(user => {
+            // login successful if there's a jwt token in the response
+            if (user && user.token) {
+                // store user details and jwt token in local storage to keep user logged in between page refreshes
+                localStorage.setItem('currentUser', JSON.stringify(user));
+            }
+            return user;
+        }));
+       
+}
 
 
   autoAuthUser() {

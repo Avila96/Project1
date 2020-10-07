@@ -13,6 +13,7 @@ const httpOptions = {
 export class UserService {
   private baseUrl =  'https://api.bkconnect.knowhere-studio.dev/admin';  // URL to web api/user/:user_id/profile
   private userUrl =  'https://api.bkconnect.knowhere-studio.dev/user';
+
      constructor(private http: HttpClient) { }
 
  
@@ -22,14 +23,14 @@ export class UserService {
      // get multiple user(Rn)----------------------------------------------------------------------------------------
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.baseUrl+ '/users', {
-      headers: new HttpHeaders({'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjcyYzVlM2E3YjVjNjUxNDIzMjA3YzEiLCJpYXQiOjE2MDE4NzczNzMsImV4cCI6MTYwMjEzNjU3M30.-1_02tRegW8DMFtz389JaM1V2pb8b-ee5lb-tjSXLUY'})
+      headers: new HttpHeaders({'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjdjMTgyODE1OGRhZTI1NzA2ZGYyMmUiLCJpYXQiOjE2MDE5NzY3NjEsImV4cCI6MTYwMjIzNTk2MX0.qyRSJ_Y8CFW69VBkd3pCwSyY7HT2hMeUKCa1dPglegk'})
     })    
    }
 
    getAdmin (): Observable<User[]> {
     return this.http.get<User[]>(this.baseUrl, {
       headers: new HttpHeaders({'Authorization':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjdjMTgyODE1OGRhZTI1NzA2ZGYyMmUiLCJpYXQiOjE2MDE5NzY3NjEsImV4cCI6MTYwMjIzNTk2MX0.qyRSJ_Y8CFW69VBkd3pCwSyY7HT2hMeUKCa1dPglegk'
-      //  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjcyYzVlM2E3YjVjNjUxNDIzMjA3YzEiLCJpYXQiOjE2MDE4NzczNzMsImV4cCI6MTYwMjEzNjU3M30.-1_02tRegW8DMFtz389JaM1V2pb8b-ee5lb-tjSXLUY'
+     
       })
     })    
    }

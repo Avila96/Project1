@@ -1,0 +1,31 @@
+<div style="background: url('../../../../assets/bckgrnd.webp');" >
+
+    <h1 align="center" >List of Topics</h1>
+   
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Created By</th>
+            <th scope="col">Created At</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let topic of arrayOfTopics ">
+                <td>
+                  {{topic.name}}
+                </td>
+                <td>{{topic.created_by}}
+                </td>
+                <td>{{topic.timestamps.created_at}}
+                </td>
+              </tr>
+          </tbody>
+        </table>
+        
+       </div>
+       <button [routerLink]="['/home']">Go Back</button>
+       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+       <br><br><br><br><br><br><br><br>
+      </div>

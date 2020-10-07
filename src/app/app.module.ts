@@ -23,6 +23,8 @@ import { UsersComponent } from './components/User/list-of-users/list-of-users.co
 import { AdminComponent } from './components/Admin/listOfAdmins/listOfAdmins.component';
 import { ViewAdminDetailComponent } from './components/Admin/view-admin-detail/view-admin-detail.component';
 import { ViewUserDetailComponent } from './components/User/view-user-detail/view-user-detail.component';
+import { ListOfTopicsComponent } from './components/Topics/list-of-topics/list-of-topics.component';
+import { ListOfSongsComponent } from './components/songs/list-of-songs/list-of-songs.component';
 //import { ViewUserDetailComponent } from './components/User/list-of-users/view-user-detail/view-user-detail.component';
 
 //import { fakeBackendProvider } from './helpers/fake-backend';
@@ -39,6 +41,8 @@ import { ViewUserDetailComponent } from './components/User/view-user-detail/view
     AdminComponent,
     ViewAdminDetailComponent,
     ViewUserDetailComponent,
+    ListOfTopicsComponent,
+    ListOfSongsComponent,
    
   
   ],

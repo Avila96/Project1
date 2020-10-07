@@ -33,7 +33,7 @@
         </div>
       </div>
     </form> -->
-
+<!-- 
  <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading" style="margin-bottom: 10px">
   <div style="background: url('../../../assets/bckgrnd.webp');">
 <div class="login">
@@ -42,7 +42,7 @@
   </div>
   <div class="login-form">
     <h3>Mobile Number :</h3>
-    <input type="text" placeholder="9898978998"  ngModel #mobile_numberInput="ngModel" required mobile_number /><br>
+    <input type="text" placeholder="9898978998"  ngModel #mobile_number Input="ngModel" required mobile_number /><br>
     <div [hidden]="mobile_numberInput.valid || mobile_numberInput.pristine" class="help-block">
       Please enter a valid mobile_number
     </div>
@@ -51,12 +51,40 @@
     ngModel matInput placeholder="Password" #passwordInput="ngModel" required/>
     <br>
     <input type="submit" class="login-button" value="Login"  *ngIf="!isLoading">
-    <!-- <input type="button" value="Login" class="login-button"/> -->
-    <br>
+    <input type="button" value="Login" class="login-button"/> -->
+   <!-- <br>
     <a class="sign-up" [routerLink]="'/register'">Sign Up!</a>
     <br>
     <br>
   </div>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div> -->
+<div style="background: url('../../../assets/bckgrnd.webp');">
+<div class="login-header">
+  <h1>Login</h1>
+</div>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="login-form">
+        <h3><label for="mobile_number">Mobile Number :</label></h3>
+        <input type="text" formControlName="mobile_number" placeholder="9898978998"
+           class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile_number.errors }" />
+        <div *ngIf="submitted && f.mobile_number.errors" class="help-block">
+            <div *ngIf="f.mobile_number.errors.required">Mobile Number is required</div>
+        </div>
+    
+        <h3><label for="password">Password :</label></h3>
+        <input type="password" formControlName="password"  placeholder="*****" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="help-block">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+        <br>
+        <button [disabled]="loading" class="btn-link">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Login
+        </button>&nbsp;
+        <a routerLink="/register" >Register</a>
+    </div>
+</form>
+<br><br><br><br><br><br>
 </div>

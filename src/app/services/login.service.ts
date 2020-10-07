@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Observable, of} from 'rxjs';
+import {Observable, BehaviorSubject} from 'rxjs';
 import {catchError, tap} from 'rxjs/internal/operators';
+import { User } from '../models/user';
 import { map } from 'rxjs/operators';
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -15,8 +16,11 @@ const httpOptions = {
 export class LoginService {
   private role: string;
   token: string;
+  private currentUserSubject: BehaviorSubject<User>;
+  public currentUser: Observable<User>;
 
   private url = 'https://api.bkconnect.knowhere-studio.dev/admin/login';
+  
   constructor(private http: HttpClient) { }
 
   getToken() {
