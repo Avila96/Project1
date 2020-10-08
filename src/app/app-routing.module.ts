@@ -11,6 +11,7 @@ import { ViewAdminDetailComponent } from './components/Admin/view-admin-detail/v
 import { ViewUserDetailComponent } from './components/User/view-user-detail/view-user-detail.component';
 import { ListOfTopicsComponent } from './components/Topics/list-of-topics/list-of-topics.component';
 import { ListOfSongsComponent } from './components/songs/list-of-songs/list-of-songs.component';
+import { PLayerComponent } from './components/songs/player/player.component';
 
 
 const routes: Routes = [
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'songs',
     component: ListOfSongsComponent
+  },
+  {
+    path: 'player',
+    component: PLayerComponent
   },
   {
     path: 'home',

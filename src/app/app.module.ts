@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule }    from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxAudioPlayerModule } from 'ngx-audio-player';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,9 +27,9 @@ import { ViewAdminDetailComponent } from './components/Admin/view-admin-detail/v
 import { ViewUserDetailComponent } from './components/User/view-user-detail/view-user-detail.component';
 import { ListOfTopicsComponent } from './components/Topics/list-of-topics/list-of-topics.component';
 import { ListOfSongsComponent } from './components/songs/list-of-songs/list-of-songs.component';
-//import { ViewUserDetailComponent } from './components/User/list-of-users/view-user-detail/view-user-detail.component';
+import { PLayerComponent } from './components/songs/player/player.component';
 
-//import { fakeBackendProvider } from './helpers/fake-backend';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { ListOfSongsComponent } from './components/songs/list-of-songs/list-of-s
     ViewUserDetailComponent,
     ListOfTopicsComponent,
     ListOfSongsComponent,
+    PLayerComponent
+  
    
   
   ],
@@ -52,6 +56,8 @@ import { ListOfSongsComponent } from './components/songs/list-of-songs/list-of-s
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    NgxAudioPlayerModule
 
   ],
   providers: [

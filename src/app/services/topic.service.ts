@@ -17,7 +17,7 @@ export class TopicService {
 
   getTopics (): Observable<Topic[]> {
     return this.http.get<Topic[]>(this.baseUrl+'/topic/?current_page=1', {
-      headers: new HttpHeaders({'Authorization':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjdjMTgyODE1OGRhZTI1NzA2ZGYyMmUiLCJpYXQiOjE2MDE5NzY3NjEsImV4cCI6MTYwMjIzNTk2MX0.qyRSJ_Y8CFW69VBkd3pCwSyY7HT2hMeUKCa1dPglegk'
+      headers: new HttpHeaders({'Authorization':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjU2NDk1MWFiNTg0ZDRiMDAzYzgzMjAiLCJpYXQiOjE2MDIxNDQ5ODUsImV4cCI6MTYwMjQwNDE4NX0.zMri7V1tNlUSp9DQ1Qf7HWBRIik6jD5yzwV11ZqykzY'
      
       })
     })    
