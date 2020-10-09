@@ -28,6 +28,7 @@ import { ViewUserDetailComponent } from './components/User/view-user-detail/view
 import { ListOfTopicsComponent } from './components/Topics/list-of-topics/list-of-topics.component';
 import { ListOfSongsComponent } from './components/songs/list-of-songs/list-of-songs.component';
 import { PLayerComponent } from './components/songs/player/player.component';
+import { MaterialModule } from './material.module';
 
 
 
@@ -57,7 +58,8 @@ import { PLayerComponent } from './components/songs/player/player.component';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgxAudioPlayerModule
+    NgxAudioPlayerModule,
+    MaterialModule
 
   ],
   providers: [

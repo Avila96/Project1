@@ -82,10 +82,10 @@ export class AudioService {
     return this.stateChange.asObservable();
   }
   
-  private streamObservable(url) {
+  private streamObservable(s3_url) {
     return new Observable(observer => {
       // Play audio
-      this.audioObj.src = url;
+      this.audioObj.src = s3_url;
       this.audioObj.load();
       this.audioObj.play();
 
@@ -119,8 +119,8 @@ export class AudioService {
     });
   }
 
-  playStream(url) {
-    return this.streamObservable(url).pipe(takeUntil(this.stop$));
+  playStream(s3_url) {
+    return this.streamObservable(s3_url).pipe(takeUntil(this.stop$));
   }
 
   play() {

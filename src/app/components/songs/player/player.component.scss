@@ -1,48 +1,65 @@
-// src/app/pages/player/player.component.scss
+	
 .container {
-    .main-toolbar {
-      .spacer {
-        flex: 1 1 auto;
+  .main-toolbar {
+    justify-content: center;
+    .spacer {
+      flex: 1 1 auto;
+    }
+    .toolbar-btn {
+      font-size: 16px;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+  }
+  h4{
+    cursor: pointer;
+    color: darkblue;
+  }
+
+  .content {
+    .logo {
+      margin: 0.5rem;
+      text-align: center;
+      font-size: 24px;
+      color: #0471d6;
+      img{
+        background-color: #0471d6;
+        padding: .5rem;
       }
-      .toolbar-btn {
-        font-size: 16px;
-        margin-right: 5px;
-        cursor: pointer;
+      .mat-icon {
+        height: 100px !important;
+        width: 100px !important;
+        font-size: 100px !important;
+        
       }
     }
-  
-    .content {
-      .logo {
-        margin: 2.5rem;
-        text-align: center;
-        font-size: 24px;
-        color: #3f51b5;
-        .mat-icon {
-          height: 160px !important;
-          width: 160px !important;
-          font-size: 160px !important;
-        }
-      }
+    .song-list{
+      height: 200px;
+      overflow: scroll;
     }
-  
-    .media-footer {
-      position: absolute;
-      bottom: 0;
+  }
+
+  .media-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    .spacer {
+      width: 200%;
+    }
+    .time-slider {
+      width: 100% !important;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    .media-action-bar {
       width: 100%;
-      .time-slider {
-        width: 100% !important;
-        margin-left: 20px;
-        margin-right: 20px;
-      }
-      .media-action-bar {
-        width: 100%;
-        padding: 2.5rem;
-        justify-content: center;
-        .mat-icon {
-          height: 48px !important;
-          width: 48px !important;
-          font-size: 48px !important;
-        }
+      padding: 2.5rem;
+      justify-content: center;
+      .mat-icon {
+        height: 48px !important;
+        width: 118px !important;
+        font-size: 20px !important;
       }
     }
   }
+}
