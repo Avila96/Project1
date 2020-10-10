@@ -10,7 +10,15 @@ const httpOptions = {
 };
 
 @Injectable({ providedIn: "root" })
+
 export class LoginAuthService {
+  //
+  private loggedIn = new BehaviorSubject<boolean>(false);
+
+  get isLoggedIn() {
+    return this.loggedIn.asObservable(); // {2}
+  }
+  
   private isAuthenticated = false;
   private token: string;
   private tokenTimer: any;
@@ -44,47 +52,10 @@ export class LoginAuthService {
     return this.isAuthenticated;
   }
 
-//   getUserId() {
-//     return this.userId;
-//   }
-
   getAuthStatusListener() {
     return this.UserAuthStatusListener.asObservable();
   }
 
-  // login(mobile_number: string, password: string){
-  //   const authData = { mobile_number: mobile_number, password: password };
-  //   this.http.post<{ mobile_number:string; full_name :string; role: string; profile_image: string, token: string; expiresIn: number; authData }>(
-  //       this.url,authData)
-  //     .subscribe(response => {
-  //       const token = response.token;
-  //       this.token = token;
-  //       if (token) {
-  //         console.log(token);
-  //         const expiresInDuration = response.expiresIn;
-  //         this.setAuthTimer(expiresInDuration);
-  //         this.isAuthenticated = true;
-  //         this.role=response.role;
-  //         this.full_name=response.full_name;
-  //         this.UserAuthStatusListener.next(true);
-  //         const now = new Date();
-  //         const expirationDate = new Date(
-  //           now.getTime() + expiresInDuration * 1000
-  //         );
-  //         console.log(expirationDate);
-  //         console.log(response.role);
-  //         console.log(response.full_name);
-  //         console.log(response.mobile_number);
-  //         this.saveAuthData(token, response.mobile_number, expirationDate, this.role, response.full_name, response.profile_image);
-  //       }
-  //     }, error => {
-  //       this.UserAuthStatusListener.next(false);
-  //       alert(
-  //         "Invalid Mobile Number or Password \n" +
-  //         "Enter Valid Mobile Number Id or Password "
-  //         );
-  //     });
-  // }
 
   login(mobile_number: string, password: string) {
     return this.http.post<any>(this.url, { mobile_number: mobile_number, password: password }, httpOptions)

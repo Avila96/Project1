@@ -1,9 +1,15 @@
 <div style="background: url('../../../../assets/bckgrnd.webp');" >
+	<div class="sidebar">
+		<a class="active"[routerLink]="'/home'" >Home</a>
+		<a [routerLink]="'/admins'">Admins</a>
+		<a  [routerLink]="'/users'"> Users </a>
+		<a [routerLink]="'/topics'">Topics</a>
+		<a [routerLink]="'/songs'">Songs</a>
+		<a [routerLink]="'/player'"> Player </a>
+		<a [routerLink]="'/songs'"> File </a>
+	  </div>
+
 <h1>The Detail of the selected Admin</h1>
-<!-- <h3>Name :          <b>{{user.full_name}}</b></h3>
-<h3>Mobile Number:  {{user.mobile_number}}</h3>
-<h3>Role:           {{user.role}}</h3>
-<h3>Profile Picture:{{user.profile_image}}</h3> -->
 
 <table class="myTable">
 	<tr>

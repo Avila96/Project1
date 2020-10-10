@@ -1,23 +1,14 @@
 <div style="background: url('../../../assets/bckgrnd.webp');">
-<nav>
-    <ul>
-      <li> 
-        <a  [routerLink]="'/users'"> Users </a>
-      </li>
-      <li>
-        <a [routerLink]="'/admins'"> Admins </a>
-      </li>
-      <li>
-        <a [routerLink]="'/topics'"> Topics </a>
-      </li>
-      <li>
-        <a [routerLink]="'/songs'"> Songs </a>
-      </li>
-      <li>
-        <a [routerLink]="'/player'"> PLayer </a>
-      </li>
-    </ul>
-  </nav>
+
+  <div class="sidebar">
+    <a class="active"  [routerLink]="'/home'" >Home</a>
+    <a [routerLink]="'/admins'">Admins</a>
+    <a  [routerLink]="'/users'"> Users </a>
+    <a [routerLink]="'/topics'">Topics</a>
+    <a [routerLink]="'/songs'">Songs</a>
+    <a [routerLink]="'/player'"> Player </a>
+    <a [routerLink]="'/songs'"> File </a>
+  </div>
 
 <h1>Welcome to Knowhere Studio</h1>
 
@@ -30,5 +21,5 @@ We collaborate to work on digital products, user-interface & user-experience, cl
 
 <p style="text-align: right;"><a [routerLink]="['/login']">Logout</a></p>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>

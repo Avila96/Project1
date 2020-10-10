@@ -1,35 +1,60 @@
-h1{  
+   h1{  
     text-align: center;  
     color: #300b6d;  
     padding: 20px;  
 } 
-li{
-    list-style-type: none;  
-    font-size: 3vh;
-    /*when I specify 2 values to margin, the first one is for the top and bottom side, the second for the left and right side*/
-    /* margin: 0 2vw; */
-  }
-  a{
-    text-decoration: none;
-    color: rgb(58, 46, 224);
-     padding: 2vw;
-    /* font-family: monospace; */
-    font-size: 25px;
-  }
-  nav{
-  /* margin-top: -10%; */
-  margin-right: 70%;
-  width: 30%;
- 
-  }
-  ul{
+
+   body {
     margin: 0;
-    padding: 5px;
-  /*this option by default dispose the elements in a row (flex-direction: row)*/
-  display: flex;
+    font-family: "Lato", sans-serif;
   }
   
-  body{
+  .sidebar {
     margin: 0;
-    
+    padding: 0;
+    width: 200px;
+    background-color: #666161;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+   
+  .sidebar a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
   }

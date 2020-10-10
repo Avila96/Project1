@@ -29,6 +29,7 @@ import { ListOfTopicsComponent } from './components/Topics/list-of-topics/list-o
 import { ListOfSongsComponent } from './components/songs/list-of-songs/list-of-songs.component';
 import { PLayerComponent } from './components/songs/player/player.component';
 import { MaterialModule } from './material.module';
+import { HeaderComponent } from './components/header/header.component';
 
 
 
@@ -46,7 +47,8 @@ import { MaterialModule } from './material.module';
     ViewUserDetailComponent,
     ListOfTopicsComponent,
     ListOfSongsComponent,
-    PLayerComponent
+    PLayerComponent, 
+    HeaderComponent,
   
    
   
