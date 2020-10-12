@@ -19,7 +19,7 @@ export class CloudService {
   // Get all Songs
   getSongs(): Observable<Song[]>{
     return this.http.get<Song[]>(this.baseUrl+'/song', {
-      headers: new HttpHeaders({'Authorization':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjU2NDk1MWFiNTg0ZDRiMDAzYzgzMjAiLCJpYXQiOjE2MDIxNDQ5ODUsImV4cCI6MTYwMjQwNDE4NX0.zMri7V1tNlUSp9DQ1Qf7HWBRIik6jD5yzwV11ZqykzY'
+      headers: new HttpHeaders({'Authorization':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjU2NDk1MWFiNTg0ZDRiMDAzYzgzMjAiLCJpYXQiOjE2MDI0ODM1MDAsImV4cCI6MTYwMjc0MjcwMH0.BQUAsXaXfqb2q3Hb5BNn1C3sba-sX4M3R71PbGwGBak'
       })
     }) 
   }
