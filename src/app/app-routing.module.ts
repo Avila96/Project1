@@ -13,6 +13,14 @@ import { ListOfTopicsComponent } from './components/Topics/list-of-topics/list-o
 import { ListOfSongsComponent } from './components/songs/list-of-songs/list-of-songs.component';
 import { PLayerComponent } from './components/songs/player/player.component';
 
+// @NgModule({
+//   imports: [
+//     RouterModule.forChild(adminRoutes)
+//   ],
+
+
+
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -26,7 +34,8 @@ const routes: Routes = [
   },
   {
     path: 'users',
-    component: UsersComponent
+    component: UsersComponent,
+    // canActivate : [AuthGuard]
   },
   {
     path: 'users/:id',
@@ -34,7 +43,8 @@ const routes: Routes = [
   },
   {
     path: 'admins',
-    component: AdminComponent
+    component: AdminComponent,
+    // canActivate : [AuthGuard]
   },
   {
     path: 'admins/:id',
@@ -42,7 +52,8 @@ const routes: Routes = [
   },
   {
     path: 'topics',
-    component: ListOfTopicsComponent
+    component: ListOfTopicsComponent,
+    // canActivate : [AuthGuard]
   },
   {
     path: 'songs',
@@ -54,7 +65,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    // canActivate : [AuthGuard]
   },
   {
     path: 'imageupload',
